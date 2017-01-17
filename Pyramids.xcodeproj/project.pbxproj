@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1FFA75931E2DA735008151A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA75921E2DA735008151A4 /* AppDelegate.swift */; };
-		1FFA75951E2DA735008151A4 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA75941E2DA735008151A4 /* art.scnassets */; };
 		1FFA75971E2DA735008151A4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFA75961E2DA735008151A4 /* GameViewController.swift */; };
 		1FFA759A1E2DA735008151A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA75981E2DA735008151A4 /* Main.storyboard */; };
 		1FFA759C1E2DA735008151A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFA759B1E2DA735008151A4 /* Assets.xcassets */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		1FFA758F1E2DA735008151A4 /* Pyramids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pyramids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFA75921E2DA735008151A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FFA75941E2DA735008151A4 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		1FFA75961E2DA735008151A4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		1FFA75991E2DA735008151A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FFA759B1E2DA735008151A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,10 +77,11 @@
 		1FFA75911E2DA735008151A4 /* Pyramids */ = {
 			isa = PBXGroup;
 			children = (
+				1FFA75B71E2DAE69008151A4 /* Models */,
+				1FFA75B61E2DAE60008151A4 /* Views */,
+				1FFA75B51E2DAE5B008151A4 /* Controllers */,
+				1FFA75B41E2DAE58008151A4 /* Storyboards */,
 				1FFA75921E2DA735008151A4 /* AppDelegate.swift */,
-				1FFA75941E2DA735008151A4 /* art.scnassets */,
-				1FFA75961E2DA735008151A4 /* GameViewController.swift */,
-				1FFA75981E2DA735008151A4 /* Main.storyboard */,
 				1FFA759B1E2DA735008151A4 /* Assets.xcassets */,
 				1FFA759D1E2DA735008151A4 /* LaunchScreen.storyboard */,
 				1FFA75A01E2DA735008151A4 /* Info.plist */,
@@ -97,6 +96,36 @@
 				1FFA75AB1E2DA735008151A4 /* Info.plist */,
 			);
 			path = PyramidsTests;
+			sourceTree = "<group>";
+		};
+		1FFA75B41E2DAE58008151A4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1FFA75981E2DA735008151A4 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		1FFA75B51E2DAE5B008151A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FFA75961E2DA735008151A4 /* GameViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1FFA75B61E2DAE60008151A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1FFA75B71E2DAE69008151A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FFA75951E2DA735008151A4 /* art.scnassets in Resources */,
 				1FFA759F1E2DA735008151A4 /* LaunchScreen.storyboard in Resources */,
 				1FFA759C1E2DA735008151A4 /* Assets.xcassets in Resources */,
 				1FFA759A1E2DA735008151A4 /* Main.storyboard in Resources */,
