@@ -24,14 +24,12 @@ class GameViewController: UIViewController {
     initScene()
     initCamera()
     createTarget()
-      
     }
 
   func initView() {
     gameView = self.view as! SCNView
     gameView.allowsCameraControl = true
     gameView.autoenablesDefaultLighting = true
-
   }
   
   func initScene(){
@@ -46,13 +44,33 @@ class GameViewController: UIViewController {
     cameraNode.position = SCNVector3(x: 0, y: 5, z: 10)
   }
 
-  // Creates red pyramid
+    // Creates red pyramid
+ 
   func createTarget(){
-    
     let geometry: SCNGeometry = SCNPyramid(width: 1, height: 1, length: 1)
-    geometry.materials.first?.diffuse.contents = UIColor.red
+    let randomColor = arc4random_uniform(2) == 0 ? UIColor.red : UIColor.green
+    geometry.materials.first?.diffuse.contents = randomColor
+    
+    // Adds geometry object to Scene
     let geometryNode = SCNNode(geometry: geometry)
+    
+    // Adds physics to Pyramid
+    geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+    
+    if randomColor == UIColor.red {
+      geometryNode.name = "Enemy"
+    } else {
+      geometryNode.name = "Friend"
+    }
+    
+    
     gameScene.rootNode.addChildNode(geometryNode)
+    
+    let randomDirection: Float = arc4random_uniform(2) == 0 ? -1.0 : 1.0
+    
+    let force = SCNVector3(x: randomDirection, y: 15, z: 0)
+    
+    geometryNode.physicsBody?.applyForce(force, at: SCNVector3(x: 0.05, y: 0.05, z: 0.05), asImpulse: true)
   }
 
     override var shouldAutorotate: Bool {
@@ -69,11 +87,6 @@ class GameViewController: UIViewController {
         } else {
             return .all
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 
 }
