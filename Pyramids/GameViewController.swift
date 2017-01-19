@@ -38,7 +38,6 @@ class GameViewController: UIViewController {
     gameView.isPlaying = true
   }
   
-  
   func initCamera(){
     cameraNode = SCNNode()
     cameraNode.camera = SCNCamera()
@@ -48,16 +47,15 @@ class GameViewController: UIViewController {
   }
   
 // Creates red pyramid
-  
   func createTarget(){
     let geometry: SCNGeometry = SCNPyramid(width: 1, height: 1, length: 1)
     let randomColor = arc4random_uniform(2) == 0 ? UIColor.red : UIColor.green
     geometry.materials.first?.diffuse.contents = randomColor
     
-    // Adds geometry object to Scene
+// Adds geometry object to Scene
     let geometryNode = SCNNode(geometry: geometry)
     
-    // Adds physics to Pyramid
+// Adds physics to Pyramid
     geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
     
     if randomColor == UIColor.red {
